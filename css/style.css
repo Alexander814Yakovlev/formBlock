@@ -1,0 +1,242 @@
+:root {
+    --main_bg: #222831;
+    --secondary_bg: #393e4683;
+    --accent: #00ADB5;
+    --white: #ffffff;
+    --light-gray: #EEEEEE;
+}
+
+/* Fonts */
+@font-face {
+    font-family: Poppins;
+    src: url(../fonts/Poppins-Bold.ttf);
+    font-style: normal;
+    font-weight: 700;
+}
+
+/* Normalize */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    background-color: var(--main_bg);
+}
+
+h1 {
+    margin: 0;
+}
+
+.container {
+    max-width: 1248px;
+    margin: 0 auto;
+}
+
+.top {
+    min-height: 200px;
+    position: relative;
+}
+
+.top>img {
+    position: absolute;
+    top: 62px;
+    right: 30%;
+}
+
+.main {
+    margin-top: 57px;
+    font-family: Poppins;
+    color: var(--white);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: 110px;    
+}
+
+.main__info {}
+
+.main__info_header {
+    font-size: 64px;
+    line-height: 80px;
+}
+
+.accent-text {
+    color: var(--accent);
+}
+
+.main__info_img {}
+
+.arrow {
+    margin: 0 0 138px 26px;
+}
+
+.person {
+    margin: -9px 0 0 27px;
+}
+
+.main__form {
+}
+
+.main__form>form {
+    height: 508px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "name email"
+        "message message"
+        "button .";
+    gap: 24px;
+}
+
+.name {
+    display: flex;
+    flex-direction: column;
+    grid-area: name;
+}
+
+.email {
+    display: flex;
+    flex-direction: column;
+    grid-area: email;
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    grid-area: message;
+}
+
+.button {
+    grid-area: button;
+}
+
+label {
+    font-size: 18px;
+}
+
+input,
+textarea {
+    font-family: Poppins;
+    background-color: var(--secondary_bg);
+    border: none;
+    border-radius: 20px;
+    height: 280px;
+    font-size: 18px;
+    color: var(--light-gray);
+    padding: 16px 24px;
+    width: 100%;
+}
+
+input {
+    width: 100%;
+    height: 60px;
+    margin-top: 12px;
+}
+
+textarea {
+    resize: none;
+    margin-top: 9px;
+}
+
+#send {
+    height: 47px;
+    width: 231px;
+    background-color: var(--accent);
+    color: var(--white);
+    border-radius: 25px;
+    border: none;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 18px;
+    padding: 10px 32px;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.bottom {
+    position: relative;
+    height: 258px;
+}
+
+.bottom img {
+    position: absolute;
+    top: 20px;
+    right: 5.5%;
+}
+
+@media screen and (max-width: 1280px) {
+    .container {
+        padding: 0 20px;
+    }
+    .main__form>form {
+        grid-template-areas: 
+            "name name"
+            "email email"
+            "message message"
+            "button button";
+    }
+    #message {
+        height: 160px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .main {
+        flex-direction: column;
+    }
+    .main__info_header {
+        text-align: center;
+    }
+
+    .main__info_img {
+        margin: 20px auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    #send {
+        width: 100%;
+        height: 60px;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .bottom img {
+        top: 50px;
+    }
+}
+
+@media  screen and (max-width: 576px) {
+    .main__info_header {
+        font-size: 12vw;
+    }
+
+    .main__info_img img {
+        width: 45vw;
+        margin-left: 0;
+    }
+
+}
+
+/* SweetAlert */
+
+.swal2-modal {
+    background-color: var(--main_bg);
+}
+
+.swal2-title {
+    font-family: Poppins;
+    color: var(--white);
+}
+
+button.swal2-confirm.swal2-styled {
+    background-color: var(--accent);
+}
